@@ -1,7 +1,12 @@
-import Card from '../ui/Card';
-import classes from './MeetupItem.module.css';
-
+import Card from "../ui/Card";
+import classes from "./MeetupItem.module.css";
+import { useRouter } from "next/router";
 function MeetupItem(props) {
+  const router = useRouter();
+  function ShowDetailHandler() {
+    router.push("/" + props.id);
+    // router.push basically pushes a new page into the components, we are stting this show that when we click to the button we navigate to [meetupId] page
+  }
   return (
     <li className={classes.item}>
       <Card>
@@ -13,7 +18,7 @@ function MeetupItem(props) {
           <address>{props.address}</address>
         </div>
         <div className={classes.actions}>
-          <button>Show Details</button>
+          <button onClick={ShowDetailHandler}>Show Details</button>
         </div>
       </Card>
     </li>
