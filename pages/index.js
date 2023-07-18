@@ -9,17 +9,19 @@ const Dummy_items = [
     description: "Beauty",
   },
   {
-    id: "m1",
-    title: "Rivers and Moutains",
-    address: "Switzerland, 1243 ",
-    image: "https://nitsaholidays.in/uploads/blog/588661nitsa.jpg",
-    description: "Beauty",
+    id: "m2",
+    title: "Skyscrappers",
+    address: "Chicago, 1245 ",
+    image:
+      "https://t4.ftcdn.net/jpg/02/20/54/73/360_F_220547309_vGPvZ7CEp09UOtRw3QIsmQaRS0zgQWjB.jpg",
+    description: "Awesome",
   },
   {
-    id: "m1",
-    title: "Rivers and Moutains",
-    address: "Switzerland, 1243 ",
-    image: "https://nitsaholidays.in/uploads/blog/588661nitsa.jpg",
+    id: "m3",
+    title: "Historical Buildings",
+    address: "Croatia, 1246 ",
+    image:
+      "https://media.cnn.com/api/v1/images/stellar/prod/230113155058-01-istria-kvarner-croatia-rab.jpg?c=original",
     description: "Beauty",
   },
 ];
@@ -59,3 +61,4 @@ export async function getServerSideProps(context) {
 //   };
 // }
 export default HomePage;
+// remember to use serverside props only when your data changes more frequently so that revalidate cannot help you, or you need acees to request and response, in every other cases we should use only staticprops
