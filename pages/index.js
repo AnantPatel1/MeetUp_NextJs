@@ -1,5 +1,7 @@
 import MeetupList from "../components/meetups/MeetupList";
+import Head from "next/head";
 import { MongoClient } from "mongodb";
+import { Fragment } from "react";
 // const Dummy_items = [
 //   {
 //     id: "m1",
@@ -34,7 +36,18 @@ function HomePage(props) {
   //   // send a http request to fetch data
   //   setLoadMeetup(Dummy_items);
   // }, []);
-  return <MeetupList meetups={props.meetups} />;
+  return (
+    <Fragment>
+      <Head>
+        <title>React Meetups</title>
+        <meta
+          name="description"
+          content="Browse a highly active list of meetups"
+        />
+      </Head>
+      <MeetupList meetups={props.meetups} />
+    </Fragment>
+  );
 }
 
 // export async function getServerSideProps(context) {
